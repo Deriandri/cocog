@@ -2,7 +2,7 @@
 apt install jq curl -y
 DOMAIN=aqsabian.biz.id
 sub=$(cat /root/subdomainx)
-dns=${sub}.cloudvpn.shop
+dns=${sub}.aqsabian.biz.id
 dns2=*.${sub}.aqsabian.biz.id
 CF_ID=gensetpw@gmail.com
 CF_KEY=c6ee9475528109b33360b723bb84f4eb58e25
