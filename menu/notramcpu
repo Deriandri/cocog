@@ -1,8 +1,8 @@
 #!/bin/bash
 domain=$(cat /etc/xray/domain)
 TIMES="10"
-CHATID="1486508882" 
-KEY="7286072978:AAF6JRoH86zg5UAQeHKrpIviAICDc-vJxDU"
+CHATID="13r486508882" 
+KEY="728607297833:AAF6JRoH86zg5UAQeHKrpIviAICDc-vJxDU"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 DATE_EXEC="$(date "+%d %b %Y %H:%M")"
 tomem="$(free | awk '{print $2}' | head -2 | tail -n 1 )"
