@@ -26,7 +26,7 @@ commonname=none
 email=none
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/sehuadri/new/main/install/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/Deriandri/cocog/main/install/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 #sudo apt install iptables-persistent netfilter-persistent
@@ -140,8 +140,8 @@ install_ssl(){
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/sehuadri/new/main/install/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/sehuadri/new/main/install/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/Deriandri/cocog/main/install/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/Deriandri/cocog/main/install/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -149,16 +149,16 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/sehuadri/new/main/install/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Deriandri/cocog/main/install/index.html1"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/sbin/badvpn "https://raw.githubusercontent.com/sehuadri/new/main/install/badvpn" >/dev/null 2>&1
+wget -O /usr/sbin/badvpn "https://raw.githubusercontent.com/Deriandri/cocog/main/install/badvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/badvpn > /dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn1.service "https://raw.githubusercontent.com/sehuadri/new/main/install/badvpn1.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn2.service "https://raw.githubusercontent.com/sehuadri/new/main/install/badvpn2.service" >/dev/null 2>&1
-wget -q -O /etc/systemd/system/badvpn3.service "https://raw.githubusercontent.com/sehuadri/new/main/install/badvpn3.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn1.service "https://raw.githubusercontent.com/Deriandri/cocog/main/install/badvpn1.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn2.service "https://raw.githubusercontent.com/Deriandri/cocog/main/install/badvpn2.service" >/dev/null 2>&1
+wget -q -O /etc/systemd/system/badvpn3.service "https://raw.githubusercontent.com/Deriandri/cocog/main/install/badvpn3.service" >/dev/null 2>&1
 systemctl disable badvpn1 
 systemctl stop badvpn1 
 systemctl enable badvpn1
@@ -200,7 +200,7 @@ apt -y install squid3
 
 # install squid for debian 11
 apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/sehuadri/new/main/install/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Deriandri/cocog/main/install/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # install stunnel
@@ -253,16 +253,16 @@ systemctl restart stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/sehuadri/new/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/Deriandri/cocog/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 #OpenVPNwebsocket
 #apt install golang-go
-#wget https://raw.githubusercontent.com/sehuadri/new/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
+#wget https://raw.githubusercontent.com/Deriandri/cocog/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
 #go run ovpn-websocket.sh
 
 
 # // install lolcat
-wget https://raw.githubusercontent.com/sehuadri/new/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
+wget https://raw.githubusercontent.com/Deriandri/cocog/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # memory swap 2gb
 #cd
@@ -300,10 +300,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/sehuadri/new/main/install/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Deriandri/cocog/main/install/issue.net"
 
 #install bbr dan optimasi kernel
-wget https://raw.githubusercontent.com/sehuadri/new/main/install/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/Deriandri/cocog/main/install/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 
 #run_ip
@@ -348,10 +348,10 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O issue "https://raw.githubusercontent.com/sehuadri/new/main/install/issue.net"
-wget -O m-theme "https://raw.githubusercontent.com/sehuadri/new/main/menu/m-theme.sh"
-wget -O speedtest "https://raw.githubusercontent.com/sehuadri/new/main/install/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/sehuadri/new/main/install/xp.sh"
+wget -O issue "https://raw.githubusercontent.com/Deriandri/cocog/main/install/issue.net"
+wget -O m-theme "https://raw.githubusercontent.com/Deriandri/cocog/main/menu/m-theme.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Deriandri/cocog/main/install/speedtest_cli.py"
+wget -O xp "https://raw.githubusercontent.com/Deriandri/cocog/main/install/xp.sh"
 
 chmod +x issue
 chmod +x m-theme
