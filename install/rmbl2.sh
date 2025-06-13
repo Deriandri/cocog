@@ -3,13 +3,13 @@
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 
-DOMAIN=yogzvpn.cloud
+DOMAIN=aqsabian.biz.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 #subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.yogzvpn.cloud
+dns=${sub}.aqsabian.biz.id
 #NS_dns=slowdns-${subsl}.asw.my.id
-CF_ID=ysshvpn@gmail.com
-CF_KEY=0d626234700bad388d6d07b49c42901445d1c
+CF_ID=gensetpw@gmail.com
+CF_KEY=c6ee9475528109b33360b723bb84f4eb58e25
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
