@@ -848,7 +848,7 @@ else
 gg="AM"
 fi
 cd
-curl -sS ifconfig.me > /etc/myipvps
+curl -sS ipv4.icanhazip.com > /etc/myipvps
 curl -s ipinfo.io/city?token=751274028fe3c0 >> /etc/xray/city
 curl -s ipinfo.io/org?token=751274028fe3c0  | cut -d " " -f 2-10 >> /etc/xray/isp
 rm /root/setup.sh >/dev/null 2>&1
